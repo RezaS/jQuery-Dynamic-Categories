@@ -1,0 +1,93 @@
+
+<html>
+	<head>
+		<title>jQuery</title>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> 
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
+		<style type="text/css"> 			
+		
+			.item { width: 30px; padding: 100px; margin: 50px; background-color: green; display: inline-block; float: left; opacity: 0.7; box-shadow: 0 0 3em #B0B0B0; -webkit-box-shadow: 0 0 3em #B0B0B0; }
+			.item:hover { opacity: 1 !important; }			
+			.green { background-color: green; float:left }			
+			.yellow { background-color: yellow; left: 600px; }			
+			.red { background-color: red; left: 1200px; }			
+			.blue { background-color: blue; top: 300px; }			
+			.purple { background-color: purple; left: 600px; top: 300px; }			
+			.orange { background-color: orange; left: 1200px; top: 300px; }
+			
+			ul#navi { list-style-type:none; margin-left:50px; padding-left:0; }
+			ul#navi li { float:left; padding-right:2px;}
+			ul#navi li a { background-color:#000; padding: 14px !important; color: #fff; opacity: 0.8; padding:0.2em; text-decoration: none }
+			ul#navi li a:hover { opacity: 0.9 }
+			
+			div.info { position: absolute; margin-left: auto;margin-right: auto; left: 0; right: 0; top: 1%; width: 20%; height: 2%; padding:20px;  border: 1px solid #B18904; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; opacity: 0.9; display: none; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFBF00), to(#B18904)); background: -moz-linear-gradient(0% 6% 270deg,#FFBF00, #B18904); }
+		</style> 
+	</head>
+<body>
+	<script type="text/javascript">
+	"use strict"
+	$(document).ready(function() {
+		$("#showAll").click(function() {
+			$(".green, .yellow, .red").show("slow");
+		})
+		$("#showGreen").click(function() {
+			$(".yellow, .red").hide("slow");
+			$(".green").show("slow");
+		})
+		$("#showYellow").click(function() {
+			$(".green, .red").hide("slow");
+			$(".yellow").show("slow");
+		})
+		$("#showRed").click(function() {
+			$(".yellow, .green").hide("slow");
+			$(".red").show("slow");
+		})
+		$(".item").click(function() {
+			$(".info").stop(true, true).fadeIn("slow").delay(2000).fadeOut("slow");
+		})
+		
+	});
+	</script> 
+		
+		<table>
+			<tr>
+				<td>
+					<div>
+						<ul id="navi">
+							<li><a id="showAll" href="#">All</a></li>
+							<li><a id="showGreen" href="#">Green</a></li>
+							<li><a id="showYellow" href="#">Yellow</a></li>
+							<li><a id="showRed" href="#">Red</a></li>
+						</ul>	
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="main">
+						<div class="item green">Green</div>
+						<div class="item yellow">Yellow</div>
+						<div class="item red">Red</div>
+						<div class="item green">Green</div>
+						<div class="item yellow">Yellow</div>
+						<div class="item red">Red</div>
+						<div class="item yellow">Yellow</div>
+						<div class="item green">Green</div>
+						<div class="item yellow">Yellow</div>
+						<div class="item red">Red</div>
+						<div class="item yellow">Yellow</div>
+						<div class="item green">Green</div>
+						<div class="item yellow">Yellow</div>
+						<div class="item red">Red</div>
+						<div class="item green">Green</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		
+		<div class="info">
+			<span>&#8592;</span> Use the navigation to view the rest of my family! :)
+		</div>
+		
+	</body>
+</html>
